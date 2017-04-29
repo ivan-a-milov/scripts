@@ -1,22 +1,16 @@
 #!/bin/bash
 
-PACKAGES_TO_INSTALL="  "
-PACKAGES_TO_INSTALL="$PACKAGES_TO_INSTALL gnome-session-flashback "
-PACKAGES_TO_INSTALL="$PACKAGES_TO_INSTALL screen htop emacs "
-PACKAGES_TO_INSTALL="$PACKAGES_TO_INSTALL git tig  "
-PACKAGES_TO_INSTALL="$PACKAGES_TO_INSTALL pidgin firefox  "
-
-sudo apt-get --yes install $PACKAGES_TO_INSTALL
-
-git clone 'https://github.com/ivan-a-milov/configs'
-cd configs
-./install.sh $HOME
-
+# Workplaces
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 12
+dconf write /org/gnome/gnome-panel/layout/objects/workspace-switcher/instance-config/num-rows 2
 
-# works after gnome-panel was launched
-# dconf write /org/gnome/gnome-panel/layout/objects/workspace-switcher/instance-config/num-rows 2
+# Desktop backgound 
+gsettings set org.gnome.desktop.background picture-uri ''
+gsettings set org.gnome.desktop.background color-shading-type solid
+gsettings set org.gnome.desktop.background primary-color '#00000 0000000'
+gsettings set org.gnome.desktop.background picture-options none
 
+# Hotkeys
 gsettings set org.gnome.desktop.wm.keybindings maximize '["<Alt><Shift>F"]'
 
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 '["<Control>F1"]'
