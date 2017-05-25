@@ -11,6 +11,7 @@ function usage()
     # TODO add init command for initialization of new empty profile
     echo "FireFox Instance Manager"
     echo "usage: ffim [list-profiles|status|up|stop|cont|down] [profileName1] [profileName2] ... "
+    echo "       ffim manage"
 }
 
 
@@ -163,6 +164,10 @@ readonly PROFILES_ALL=$( cat $HOME/.mozilla/firefox/profiles.ini | grep ^Name= |
 case "$CMD" in
     list-profiles)
         echo $PROFILES_ALL | xargs -n1
+        ;;
+    manage)
+        firefox --new-instance -P & 
+        exit 0
         ;;
     status | up | stop | cont | down )
         ;;
