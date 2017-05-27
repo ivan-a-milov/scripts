@@ -20,7 +20,7 @@ function echoPIDbyProfile()
     if [ ! -z $1 ]
     then
         profile=$1
-        PID=$( ps h -C firefox -o pid,cmd | grep $profile | awk -e '{ print $1 }' )
+        PID=$( ps h -C firefox -o pid,cmd | grep $profile | awk '{ print $1 }' )
         pids_count=$( echo $PID | wc -w )
         case $pids_count in
             0) ;;
@@ -29,7 +29,7 @@ function echoPIDbyProfile()
                 ;;
             2)
                 echo "Two instaces of $profile, working with first" 1>&2
-                echo $PID | awk -e '{ print $1 }'
+                echo $PID | awk '{ print $1 }'
 
                 ;;
             *)
