@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PACKAGES_TO_INSTALL="  "
-PACKAGES_TO_INSTALL="$PACKAGES_TO_INSTALL gnome-session-flashback "
+PACKAGES_TO_INSTALL="$PACKAGES_TO_INSTALL gnome-session-flashback gnome-session"
 PACKAGES_TO_INSTALL="$PACKAGES_TO_INSTALL screen htop emacs "
 PACKAGES_TO_INSTALL="$PACKAGES_TO_INSTALL git tig jq aptitude "
 PACKAGES_TO_INSTALL="$PACKAGES_TO_INSTALL firefox  "
