@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# No automount
+gsettings set org.gnome.desktop.media-handling automount false
+
 # Workplaces
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 12
 dconf write /org/gnome/gnome-panel/layout/objects/workspace-switcher/instance-config/num-rows 2
